@@ -25,6 +25,14 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Styling
+
+The root app uses the NativeWind v5 release candidate with Tailwind CSS v4.
+Global styles are defined in `src/global.css` and imported by the root layout.
+After changing the styling configuration, restart Metro with
+`npx expo start --clear`. The NativeWind v5 release candidate was tested with
+Expo SDK 57; this app uses SDK 58, so verify styling on your target platforms.
+
 ## Get a fresh project
 
 When you're ready, run:
@@ -37,7 +45,7 @@ This command will move the starter code to the **example** directory and create 
 
 ### Other setup steps
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
+- Run `npx expo lint` to lint the root app. See ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/) for more information.
 - If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
 - Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
 
