@@ -1,64 +1,84 @@
-# Welcome to your Expo app 👋
+# Expo NativeWind Starter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A starter template for building cross-platform apps with Expo, Expo Router, TypeScript, NativeWind, and Tailwind CSS.
 
-## Get started
+## Stack
 
-1. Install dependencies
+- Expo SDK 58 and React Native
+- Expo Router for file-based navigation
+- NativeWind v5 release candidate and Tailwind CSS v4
+- TypeScript and ESLint
 
-   ```bash
-   npm install
-   ```
+> **Note:** NativeWind v5 is a release candidate. Its installation guide lists Expo SDK 57 as its tested target; this starter uses SDK 58. Test your app on the platforms you plan to support.
 
-2. Start the app
+## Getting started
 
-   ```bash
-   npx expo start
-   ```
+### Requirements
 
-In the output, you'll find options to open the app in a
+- Node.js 24.3 or newer on the Node 24 release line
+- npm
+- Expo Go, a development build, or an emulator/simulator for mobile testing
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Installation
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Styling
-
-The root app uses the NativeWind v5 release candidate with Tailwind CSS v4.
-Global styles are defined in `src/global.css` and imported by the root layout.
-After changing the styling configuration, restart Metro with
-`npx expo start --clear`. The NativeWind v5 release candidate was tested with
-Expo SDK 57; this app uses SDK 58, so verify styling on your target platforms.
-
-## Get a fresh project
-
-When you're ready, run:
+Create a repository from this template or clone it, then install dependencies:
 
 ```bash
-npm run reset-project
+npm ci
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Start the development server:
 
-### Other setup steps
+```bash
+npx expo start
+```
 
-- Run `npx expo lint` to lint the root app. See ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/) for more information.
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Follow the terminal instructions to open the app on your preferred platform. Expo Go must support the Expo SDK version used by this project.
 
-## Learn more
+## Project structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```text
+src/
+  app/
+    _layout.tsx    # Root navigation layout
+    index.tsx      # Home screen
+  global.css       # Tailwind and NativeWind imports
+assets/            # App icons and images
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Add screens inside `src/app` and use NativeWind utility classes through the `className` prop.
 
-## Join the community
+## Commands
 
-Join our community of developers creating universal apps.
+```bash
+npm run android      # Start for Android
+npm run ios          # Start for iOS
+npm run web          # Start for web
+npm run lint         # Run ESLint
+npx tsc --noEmit     # Check TypeScript
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If styling changes are not picked up, restart Metro with a cleared cache:
+
+```bash
+npx expo start --clear
+```
+
+## Customize your app
+
+1. Update the app name, slug, and URL scheme in `app.json`.
+2. Replace the icons and splash-screen assets.
+3. Remove or replace the existing Expo owner and EAS project ID before connecting your own EAS project.
+4. Edit the home screen in `src/app/index.tsx` and add your own routes.
+
+## Resources
+
+- [Expo documentation](https://docs.expo.dev/)
+- [Expo Router documentation](https://docs.expo.dev/router/introduction/)
+- [NativeWind v5 documentation](https://www.nativewind.dev/v5/getting-started/installation)
+- [Tailwind CSS documentation](https://tailwindcss.com/docs)
+
+## License
+
+MIT. See [LICENSE](./LICENSE).
+
